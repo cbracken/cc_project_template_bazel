@@ -1,3 +1,5 @@
+package(default_visibility = ["//visibility:public"])
+
 cc_library(
     name = "foolib",
     srcs = [
@@ -8,12 +10,16 @@ cc_library(
         "bar.h",
         "foo.h",
     ],
+    deps = [
+        "@com_google_absl//absl/strings",
+    ],
     visibility = ["//foobar:__pkg__"],
 )
 
 cc_binary(
     name = "foobar",
     srcs = ["main.cc"],
+    linkopts = ["-lm"],
     deps = [":foolib"],
 )
 
@@ -23,8 +29,9 @@ cc_test(
         "bar_test.cc",
         "foo_test.cc",
     ],
+    linkopts = ["-lm"],
     deps = [
-        "@googletest//:gtest_main",
+        "@com_google_googletest//:gtest_main",
         ":foolib",
     ],
 )

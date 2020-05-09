@@ -2,15 +2,12 @@
 
 #include "gtest/gtest.h"
 
-TEST(Bar, DecrementsZero) {
-  EXPECT_EQ(-1, Bar(0));
-}
+namespace foobar {
+namespace {
 
-TEST(Bar, DecrementsPositive) {
-  EXPECT_EQ(1, Bar(2));
-}
+TEST(Bar, HandlesEmptyString) { EXPECT_EQ("Hello", Bar("")); }
 
-TEST(Bar, DecrementsNegative) {
-  EXPECT_EQ(-2, Bar(-1));
-}
+TEST(Bar, HandlesName) { EXPECT_EQ("Hello, Alice", Bar("Alice")); }
 
+}  // namespace
+}  // namespace foobar

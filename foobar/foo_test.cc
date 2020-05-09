@@ -2,14 +2,14 @@
 
 #include "gtest/gtest.h"
 
-TEST(Foo, IncrementsZero) {
-  EXPECT_EQ(1, Foo(0));
-}
+namespace foobar {
+namespace {
 
-TEST(Foo, IncrementsPositive) {
-  EXPECT_EQ(2, Foo(1));
-}
+TEST(Foo, IncrementsZero) { EXPECT_EQ(1, Foo(0)); }
 
-TEST(Foo, IncrementsNegative) {
-  EXPECT_EQ(-1, Foo(-2));
-}
+TEST(Foo, IncrementsPositive) { EXPECT_EQ(2, Foo(1)); }
+
+TEST(Foo, IncrementsNegative) { EXPECT_EQ(-1, Foo(-2)); }
+
+}  // namespace
+}  // namespace foobar
