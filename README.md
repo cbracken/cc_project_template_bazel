@@ -8,13 +8,6 @@ A [Bazel](http://bazel.build) and
 To build, you'll need [Bazel](http://bazel.build) and a clang build toolchain
 installed on your system.
 
-## Obtaining the source
-
-First, clone the repo:
-```shell
-git clone git@gitlab.com:cbracken/cc_project_template_bazel.git
-```
-
 ## Building and running
 
 ### Unit tests
